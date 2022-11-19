@@ -1,4 +1,5 @@
 // Step 1: Import React
+import { StaticImage } from 'gatsby-plugin-image'
 import * as React from 'react'
 import Layout from './layout'
 
@@ -7,6 +8,10 @@ const IndexPage = () => {
   return (
     <Layout pageTitle="Inicio">
       <p>Estoy haciendo este sitio siguiendo el tutorial de Gatsby.</p>
+      <StaticImage
+        alt='Clifford, un pitbull marrón rojizo, posa en un sofá y mira estoicamente a la cámara.'
+        src='https://pbs.twimg.com/media/E1oMV3QVgAIr1NT?format=jpg&name=large'
+      />
     </Layout>
   )
 }
