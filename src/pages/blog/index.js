@@ -7,7 +7,7 @@ const BlogPage = ({ data }) => {
     return(
         <Layout pageTitle="Mis publicaciones de blog">
             {
-                data.allMdx.nodes.map((node) => (
+                data.allMdx.nodes.map(node => (
                     <article key={node.id}>
                         <h2>
                             <Link to={`/blog/${node.frontmatter.slug}`}>
@@ -15,7 +15,6 @@ const BlogPage = ({ data }) => {
                             </Link>
                         </h2>
                         <p>Posted: {node.frontmatter.date}</p>
-                        <p>{node.excerpt}</p>
                     </article>
                 ))
             }    
@@ -25,7 +24,7 @@ const BlogPage = ({ data }) => {
 
 export const query = graphql`
     query {
-        allMdx(sort: {frontmatter: {date: DESC}}) {
+        allMdx(sort: {frontmatter: {date: DESC }}) {
             nodes {
                 frontmatter {
                     date(formatString: "MMMM D, YYYY")
